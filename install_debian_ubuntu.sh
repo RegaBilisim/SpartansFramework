@@ -41,6 +41,6 @@ cp -a /home/user/.Xauthority /root/.Xauthority 2> /dev/null
 chown root /root/.Xauthority
 XAUTHORITY=/root/.Xauthority
 rm -Rf /tmp/spartansframework 2> /dev/null
-git clone https://github.com/1N3/Sn1per /tmp/spartansframework
+git clone https://github.com/RegaBilisim/SpartansFramework /tmp/spartansframework
 cd /tmp/spartansframework
 bash install.sh
