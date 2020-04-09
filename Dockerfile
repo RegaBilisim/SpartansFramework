@@ -2,11 +2,11 @@ FROM kalilinux/kali-linux-docker
 
 LABEL org.label-schema.name='Spartansframework - Kali Linux' \
     org.label-schema.description='Automated pentest framework for offensive security experts' \
-    org.label-schema.usage='https://github.com/1N3/Sn1per' \
-    org.label-schema.url='https://github.com/1N3/Sn1per' \
-    org.label-schema.vendor='https://xerosecurity.com' \
+    org.label-schema.usage='https://github.com/RegaBilisim/SpartansFramework' \
+    org.label-schema.url='https://github.com/RegaBilisim/SpartansFramework' \
+    org.label-schema.vendor='https://spartansht.online' \
     org.label-schema.schema-version='1.0' \
-    org.label-schema.docker.cmd.devel='docker run --rm -ti xerosecurity/sniper' \
+    org.label-schema.docker.cmd.devel='docker run --rm -ti RegaBilisim/SpartansFramework' \
     MAINTAINER="@aristarkh, @n01r"
 
 RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /etc/apt/sources.list && \
@@ -26,7 +26,7 @@ RUN sed -i 's/systemctl status ${PG_SERVICE}/service ${PG_SERVICE} status/g' /us
 RUN apt-get --yes install git \
     && mkdir -p security \
     && cd security \
-    && git clone https://github.com/1N3/Sn1per.git \
+    && git clone https://github.com/RegaBilisim/SpartansFramework.git \
     && cd spartansframework \
     && ./install.sh \
     && spartansframework -u force
