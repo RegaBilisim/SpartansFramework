@@ -136,7 +136,7 @@ function spartansframework_status {
 
 function check_online {
   if [[ ! -z "$ONLINE" ]]; then
-    ONLINE=$(curl --connect-timeout 3 -s https://api.github.com/repos/1N3/Sn1per/tags | grep -Po '"name":.*?[^\\]",'| head -1 | cut -c11-13)
+    ONLINE=$(curl --connect-timeout 3 -s https://api.github.com/repos/RegaBilisim/SpartansFramework/tags | grep -Po '"name":.*?[^\\]",'| head -1 | cut -c11-13)
     if [[ -z "$ONLINE" ]]; then
       ONLINE="0"
       echo -e "$OKBLUE[*]$RESET Checking for active internet connection $OKBLUE[$RESET${OKRED}FAIL${RESET}$OKBLUE]"
@@ -150,7 +150,7 @@ function check_online {
 
 function check_update {
   if [[ "$ENABLE_AUTO_UPDATES" == "1" ]] && [[ "$ONLINE" == "1" ]]; then
-    LATEST_VER=$(curl --connect-timeout 5 -s https://api.github.com/repos/1N3/Sn1per/tags | grep -Po '"name":.*?[^\\]",'| head -1 | cut -c11-13)
+    LATEST_VER=$(curl --connect-timeout 5 -s https://api.github.com/repos/RegaBilisim/SpartansFramework/tags | grep -Po '"name":.*?[^\\]",'| head -1 | cut -c11-13)
     if [[ "$LATEST_VER" != "$VER" ]]; then
       echo -e "$OKBLUE[$RESET${OKRED}i${RESET}$OKBLUE] spartansframework v$LATEST_VER is available to download... To update, type$OKRED \"spartansframework -u\" $RESET"
     fi
